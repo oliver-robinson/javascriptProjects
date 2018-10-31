@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Net Pay</title>
+</head>
+<body>
+    <h1>Net Pay Program</h1>
+    <p>Net pay calculator that takes your GROSS pay and then deducts Federal, State, and FICA.  It has option to deduct additional amount from your check if you choose to.</p>
+    <ol>
+        <li>Start</li>
+        <li>Display, "How much did you earn a year?"</li>
+        <li>Input grossPay</li>
+        <li>Display, "Give me a second while I calculate your check!"</li>
+        <li>Set FED = .15</li>
+        <li>Set STATE = .05</li>
+        <li>Set FICA = .0762</li>
+        <li>Set netPay = ((grossPay * FED) + (grossPay * STATE) + (grossPay * FICA)) - grossPay</li>
+        <li>Display "Your Gross pay is " grossPay"."</li>
+        <li>Display "Would you like for me to take anything else out of your check?"</li>
+        <li>Input "yes" or "no"</li>
+        <li>Display "How much would you like to take out of your check?"</li>
+        <li>Input deductions</li>
+        <li>Set grossFinal = grossPay - additionalCuts</li>
+        <li>Display, "Your final pay for the year is " grossFinal"."</li>
+        <li>End</li>
+    </ol>
+
+    <p>How much did you earn a year?</p>
+    <form action="#" onsubmit="grossFunction()">
+        <input type="text" id="grossPay">
+        <p>How much would you like to take out of your check?</p>
+        <input type="text" id="addDeductions" value="0">
+        <input type="submit" value="submit">
+    </form>
+
+    <p>Your net gross is: <span id="results"></span></p>
+
+    <script type="text/javascript">
+        function grossFunction() {
+            var results = document.getElementById('results');
+            var grossPay = parseInt(document.getElementById('grossPay').value);
+            var addDeductions = parseInt(document.getElementById('addDeductions').value);
+            var FED = .15;
+            var STATE = .05;
+            var FICA = .0762;
+            var gross = grossPay - ((grossPay * FED) + (grossPay * STATE) + (grossPay * FICA));
+            var netPay = gross - addDeductions;
+            results.innerHTML = "$" + netPay;
+        }
+    </script>
+</body>
+</html>

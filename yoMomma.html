@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YO MOMMA JOKES</title>
+    <style >
+        .bg {
+            background-color: yellowgreen;
+        }
+
+        .words {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .jokes {
+            font-size: 20px;
+            margin-left: 400px;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body class="bg">
+    <p class="words">Hello and welcome to YOMOMMAJOKES.com where we makes jokes about your mom at your expense.  Click the random button to generate a Yo Momma Joke.</p>
+    <form  onsubmit="yoMommaJokes()" class="words">
+        <input type="submit" value="Random">
+    </form>
+
+    <span id="output" class="jokes"></span>
+
+    <script type="text/javascript">
+        function yoMommaJokes() {
+            event.preventDefault();
+            var output = document.getElementById('output');
+            var jokes = [
+                "Yo momma so stupid she stuck a battery up her ass and said, 'I GOT THE POWER!'", 
+                "Yo momma is so stupid she climbed over a glass wall to see what was on the other side.", 
+                "Yo momma's so fat, she tripped over Wal-Mart, stumbled over K-Mart, and landed on Target.", 
+                "Yo momma is so stupid she took a ruler to bed to see how long she slept.", 
+                "Yo momma is so fat that when she saw a yellow school bus go by full of white kids she ran after it yelling, 'TWINKIE!'", 
+                "Yo mom is so dumb that she thought Dunkin' Donuts was a basketball team.", 
+                "Yo mama’s so stupid, she stared at a cup of orange juice for 12 hours because it said 'concentrate.'", 
+                "Yo mama’s so stupid, she put lipstick on her forehead to make up her mind.", 
+                "Yo mama’s so stupid, when they said, “Order in the court,” she asked for fries and a shake",
+                "Yo mama’s so fat, if she was a Star Wars character, her name would be Admiral Snackbar.",
+                "Yo momma is so hairy, when she went to the movie theater to see Star Wars, everybody screamed and said, 'IT'S CHEWBACCA!'"];
+
+            output.innerHTML = jokes[generateRandom()];
+        }
+
+        function generateRandom(){
+            return Math.round(Math.random() * 11);
+        }
+    </script>
+    
+</body>
+</html>

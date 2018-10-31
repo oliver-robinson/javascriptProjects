@@ -1,0 +1,48 @@
+Display "How many " weeks "have you worked so far this year?"
+Input weeks
+Set ptoweeks = weeks / 2
+Set pto = 5 * ptoweeks
+Display "You have earned " pto "hours during your tenure!"
+
+
+V1
+Display "You have worked 52 weeks so far.  Give me a sec to calculate your pto!"
+set weeksPerYear to 52
+Set ptoweeks = weeksperyear / 2
+Set pto = 5 * ptoweeks
+Display "You have earned " pto "hours during your tenure!"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PTO</title>
+</head>
+<body>
+    <h1>PTO Hours per year</h1>
+    <p>This is a simple program that outputs how many yours you earn a year for pto.</p>
+
+    <form action="#" onsubmit="grossFunction()">
+        <p>How many weeks have you worked this year?</p>
+        <input type="text" id="myWeeks" placeholder="0">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Your available pto is: <span id="output"></span></p>
+    <script type="text/javascript">
+    function grossFunction() {
+        event.preventDefault();
+        var output = document.getElementById('output');
+
+        var paychecksPerYear = 26;
+
+        var hrsPerPaycheck = 5;
+
+        var totalHoursPerYear = hrsPerPaycheck * paychecksPerYear
+        output.innerHTML = totalHoursPerYear;
+    }
+    </script>
+</body>
+</html>
